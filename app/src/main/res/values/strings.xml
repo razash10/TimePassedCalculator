@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">כמה זמן עבר?</string>
+    <string name="title1">חשב</string>
+    <string name="title2">כמה זמן עבר</string>
+    <string name="title3">לפי</string>
+    <string name="chooseDate">בחר/י תאריך</string>
+    <string name="selectedDate">התאריך הנבחר</string>
+    <string name="passedTime">שניות עבור מהתאריך הנבחר</string>
 </resources>

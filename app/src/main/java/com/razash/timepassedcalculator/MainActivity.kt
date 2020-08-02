@@ -13,9 +13,9 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     var factor = 1
-    var lastSelectedDay = 14
-    var lastSelectedMonth = 4
-    var lastSelectedYear = 1948
+    private var lastSelectedDay = 14
+    private var lastSelectedMonth = 4
+    private var lastSelectedYear = 1948
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                var opt: String = options.get(p2)
+                var opt: String = options[p2]
 
                 when(opt) {
                     "שניות" -> factor = 1
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun clickDatePicker(view: View) {
+    private fun clickDatePicker(view: View) {
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
         val month = myCalendar.get(Calendar.MONTH)
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                     lastSelectedYear = selectedYear
                     calculateAndShowDate()
                 },year, month, day)
-        dpd.datePicker.setMaxDate(Date().time)
+        dpd.datePicker.maxDate = Date().time
         dpd.show()
 
     }
@@ -76,18 +76,18 @@ class MainActivity : AppCompatActivity() {
         if(factor == 2) { // factor in Years
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
             val diffInYears = currentYear - lastSelectedYear
-            tvSelectedDateInTime.setText(diffInYears.toString())
+            tvSelectedDateInTime.text = diffInYears.toString()
         }
         else {
             val selectedDate = "$lastSelectedDay/${lastSelectedMonth+1}/$lastSelectedYear"
-            tvSelectedDate.setText(selectedDate)
+            tvSelectedDate.text = selectedDate
             val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
             val theDate = sdf.parse(selectedDate)
             val selectedDateInTime = (theDate!!.time / factor) / 1000
             val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
             val currentDateInTime = (currentDate!!.time / factor) / 1000
             val differenceInTime = currentDateInTime - selectedDateInTime
-            tvSelectedDateInTime.setText(differenceInTime.toString())
+            tvSelectedDateInTime.text = differenceInTime.toString()
         }
 
     }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="חשב"
+        android:text="@string/title1"
         android:textColor="@color/textColor"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -21,16 +20,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="כמה זמן עבר"
+        android:text="@string/title2"
         android:textColor="@color/ageTextColor"
         android:background="@color/ageTextBackgroundColor"
         android:textSize="25sp"
+        android:paddingHorizontal="5dp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="לפי"
+        android:text="@string/title3"
         android:textColor="@color/textColor"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -46,12 +46,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:background="@color/dateButtonBackgroundColor"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/textColor"
-        android:text="בחר/י תאריך" />
+        android:text="@string/chooseDate" />
 
     <TextView
         android:id="@+id/tvSelectedDate"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/subTextColor"
-        android:text="התאריך הנבחר"
+        android:text="@string/selectedDate"
         android:textSize="12sp" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/textColor"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:textSize="40sp" />
 
     <TextView
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/subTextColor"
-        android:text="שניות עבור מהתאריך הנבחר"
+        android:text="@string/passedTime"
         android:textSize="12sp" />
 
 </LinearLayout>
